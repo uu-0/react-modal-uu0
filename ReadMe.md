@@ -45,6 +45,7 @@ npm install react-modal-uu0
 ### Exemple d'utilisation
 Voici un exemple d'utilisation du composant Modal dans un projet React.
 
+dans app.js
 ```jsx
 import React, { useState } from 'react'
 import Modal from 'react-modal-uu0'
@@ -75,6 +76,12 @@ function App() {
 }
 
 export default App
+```
+dans index.html
+```html
+<body>
+    <div id="portal"></div>
+</body>
 ```
 
 ### Détails des props
