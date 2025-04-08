@@ -1,11 +1,16 @@
 {
   "name": "react-modal-uu0",
   "version": "1.0.0",
+  "description": "Composant React Modal",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uu-0/react-modal-uu0.git"
+  },
+  "keywords": ["react", "modal", "composant", "ui"],
+  "author": "uu-0",
   "license": "MIT",
   "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "styled-components": "^6.1.17"
+    "react": "^17.0.0"
   }
 }
