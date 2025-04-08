@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
-import { colors } from '../styles/colors'
 
 //---------- styles ----------
 
@@ -46,7 +45,7 @@ const Header = styled.div`
 //titre de la modale
 const Title = styled.h2`
   font-size: 24px;
-  color: ${colors.blue}; // couleur personnalisée
+  color: #1565c0; 
 `
 
 //bouton close de la modale
@@ -54,12 +53,12 @@ const CloseButton = styled.button`
   margin-top: -15px;
   background: none;
   border: none;
-  color: ${colors.blue};
+  color: #1565c0;
   font-size: 40px;
   cursor: pointer;
   transition: color 0.3s;
   &:hover {
-    color: ${colors.orange};
+    color: #ff4f01;
   }
 `
 //contenu de la modale

@@ -1,16 +1,33 @@
 {
-  "name": "react-modal-uu0",
+  "name": "react-modal-component-uu0",
   "version": "1.0.0",
-  "description": "Composant React Modal",
-  "main": "index.js",
+  "description": "A customizable modal component for React applications",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "npx ncp src dist",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "react",
+    "modal",
+    "component",
+    "ui"
+  ],
+  "author": "uu-0",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
+  },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/uu-0/react-modal-uu0.git"
   },
-  "keywords": ["react", "modal", "composant", "ui"],
-  "author": "uu-0",
-  "license": "MIT",
-  "dependencies": {
-    "react": "^17.0.0"
-  }
+  "bugs": {
+    "url": "https://github.com/uu-0/react-modal-uu0/issues"
+  },
+  "homepage": "https://github.com/uu-0/react-modal-uu0"
 }
