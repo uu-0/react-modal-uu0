@@ -1,5 +1,7 @@
 # Modal React Component
 
+![GitHub](https://img.shields.io/github/repo-size/ton-username/react-modal-uu0)
+
 ## Description
 Ce package fournit un composant de modale en React. La modale permet d'afficher un contenu modal avec des options de personnalisation, telles que le titre, le texte, et le comportement de fermeture. Ce composant utilise `ReactDOM.createPortal` pour rendre la modale en dehors du flux DOM normal, ce qui permet d'éviter les problèmes de z-index et de garantir une bonne expérience utilisateur.
 
