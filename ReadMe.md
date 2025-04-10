@@ -20,20 +20,28 @@ Ce package fournit un composant de modale en React. La modale permet d'afficher 
 - **Animation d’apparition et disparition** : La modale s'affiche et se cache avec une animation fluide grâce aux propriétés CSS `opacity` et `transform`.
 - **Blocage du scroll arrière-plan** : Lorsque la modale est ouverte, le défilement de la page est désactivé afin d'éviter que l'utilisateur ne puisse interagir avec le contenu en arrière-plan.
 
-### Fonctionnalités non ajoutées
-Certaines fonctionnalités jQuery du plugin original n'ont pas été converties en raison de la spécification du projet qui demande de se concentrer uniquement sur les aspects UI du plugin.
+### Détails des props
 
-1. **Chargement de contenu AJAX** :
-   - **Pourquoi non converti ?** : Le chargement de contenu AJAX fait référence à la récupération de données depuis un serveur, ce qui relève de la logique de gestion des données. Cette fonctionnalité est donc laissée de côté pour cette conversion.
+- **`isOpen`** (booléen) :  
+  Cette prop détermine si la modale doit être visible ou non. Lorsque `isOpen` est `true`, la modale est affichée. Si elle est `false`, la modale est cachée.
 
-2. **Stack de modales multiples (modals.push)** :
-   - **Pourquoi non converti ?** : La gestion de plusieurs modales empilées n'est pas incluse par défaut. Ce comportement peut être ajouté si nécessaire, mais il n'est pas requis pour un cas d'utilisation de base. En React, la gestion d'un tel comportement se fait généralement au niveau de l'état global ou d'un gestionnaire de modales. Cette fonctionnalité est donc non incluse pour garder le composant simple et réutilisable.
+- **`onClose`** (fonction) :  
+  Cette fonction est appelée lorsque la modale doit être fermée, que ce soit par un clic sur le bouton de fermeture ou un clic sur l'overlay. C'est une prop obligatoire pour gérer l'état de fermeture de la modale.
 
-3. **Événements personnalisés (modal:open, modal:close, etc.)** :
-   - **Pourquoi non converti ?** : En React, les événements sont gérés de manière déclarative via des props et des callbacks (comme `onClose`). L'utilisation d'événements personnalisés comme `modal:open` et `modal:close` n'est pas nécessaire, car React privilégie l'approche unidirectionnelle des données et les callbacks. Cela simplifie l'intégration et le contrôle de la modale dans les composants parents.
+- **`title`** (chaîne de caractères) :  
+  Cette prop définit le titre qui apparaît en haut de la modale. Elle est personnalisable.
 
-4. **Ajout automatique de bouton Close** :
-   - **Pourquoi non converti ?** : En React, l'approche consiste à expliciter les composants. Le bouton de fermeture est ici un composant séparé, ce qui permet de mieux contrôler son comportement, son style et son placement. La modale n'ajoute donc pas un bouton de fermeture automatiquement comme en jQuery. Cela permet à l'utilisateur de personnaliser la modale selon ses besoins spécifiques.
+- **`text`** (chaîne de caractères ou JSX) :  
+  Cette prop définit le contenu de la modale. Elle peut être une chaîne de caractères simple ou du JSX pour un contenu plus complexe.
+
+- **`escapeClose`** (booléen, valeur par défaut : `true`) :  
+  Si activée (`true`), la modale se fermera lorsque l'utilisateur appuie sur la touche Escape. Si désactivée (`false`), cette fonctionnalité est désactivée.
+
+- **`clickClose`** (booléen, valeur par défaut : `true`) :  
+  Si activée (`true`), la modale se fermera lorsque l'utilisateur clique sur l'overlay (l'arrière-plan semi-transparent). Si désactivée (`false`), cette fonctionnalité est désactivée.
+
+  - **`isError`** (booléen, valeur par défaut : `false`) :
+  Cette prop permet de personnaliser l'apparence du titre de la modale. Si isError est true, le titre sera affiché en rouge pour indiquer une erreur. Sinon, il sera en bleu par défaut.
 
 ## Utilisation
 
@@ -91,29 +99,17 @@ dans index.html
 </body>
 ```
 
-### Détails des props
+### Fonctionnalités non ajoutées
+Certaines fonctionnalités jQuery du plugin original n'ont pas été converties en raison de la spécification du projet qui demande de se concentrer uniquement sur les aspects UI du plugin.
 
-- **`isOpen`** (booléen) :  
-  Cette prop détermine si la modale doit être visible ou non. Lorsque `isOpen` est `true`, la modale est affichée. Si elle est `false`, la modale est cachée.
+1. **Chargement de contenu AJAX** :
+   - **Pourquoi non converti ?** : Le chargement de contenu AJAX fait référence à la récupération de données depuis un serveur, ce qui relève de la logique de gestion des données. Cette fonctionnalité est donc laissée de côté pour cette conversion.
 
-- **`onClose`** (fonction) :  
-  Cette fonction est appelée lorsque la modale doit être fermée, que ce soit par un clic sur le bouton de fermeture ou un clic sur l'overlay. C'est une prop obligatoire pour gérer l'état de fermeture de la modale.
+2. **Stack de modales multiples (modals.push)** :
+   - **Pourquoi non converti ?** : La gestion de plusieurs modales empilées n'est pas incluse par défaut. Ce comportement peut être ajouté si nécessaire, mais il n'est pas requis pour un cas d'utilisation de base. En React, la gestion d'un tel comportement se fait généralement au niveau de l'état global ou d'un gestionnaire de modales. Cette fonctionnalité est donc non incluse pour garder le composant simple et réutilisable.
 
-- **`title`** (chaîne de caractères) :  
-  Cette prop définit le titre qui apparaît en haut de la modale. Elle est personnalisable.
+3. **Événements personnalisés (modal:open, modal:close, etc.)** :
+   - **Pourquoi non converti ?** : En React, les événements sont gérés de manière déclarative via des props et des callbacks (comme `onClose`). L'utilisation d'événements personnalisés comme `modal:open` et `modal:close` n'est pas nécessaire, car React privilégie l'approche unidirectionnelle des données et les callbacks. Cela simplifie l'intégration et le contrôle de la modale dans les composants parents.
 
-- **`text`** (chaîne de caractères ou JSX) :  
-  Cette prop définit le contenu de la modale. Elle peut être une chaîne de caractères simple ou du JSX pour un contenu plus complexe.
-
-- **`escapeClose`** (booléen, valeur par défaut : `true`) :  
-  Si activée (`true`), la modale se fermera lorsque l'utilisateur appuie sur la touche Escape. Si désactivée (`false`), cette fonctionnalité est désactivée.
-
-- **`clickClose`** (booléen, valeur par défaut : `true`) :  
-  Si activée (`true`), la modale se fermera lorsque l'utilisateur clique sur l'overlay (l'arrière-plan semi-transparent). Si désactivée (`false`), cette fonctionnalité est désactivée.
-
-  - **`isError`** (booléen, valeur par défaut : `false`) :
-  Cette prop permet de personnaliser l'apparence du titre de la modale. Si isError est true, le titre sera affiché en rouge pour indiquer une erreur. Sinon, il sera en bleu par défaut.
-
-
-
-
+4. **Ajout automatique de bouton Close** :
+   - **Pourquoi non converti ?** : En React, l'approche consiste à expliciter les composants. Le bouton de fermeture est ici un composant séparé, ce qui permet de mieux contrôler son comportement, son style et son placement. La modale n'ajoute donc pas un bouton de fermeture automatiquement comme en jQuery. Cela permet à l'utilisateur de personnaliser la modale selon ses besoins spécifiques.
