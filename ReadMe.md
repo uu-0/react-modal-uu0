@@ -40,7 +40,7 @@ Ce package fournit un composant de modale en React. La modale permet d'afficher 
 - **`clickClose`** (booléen, valeur par défaut : `true`) :  
   Si activée (`true`), la modale se fermera lorsque l'utilisateur clique sur l'overlay (l'arrière-plan semi-transparent). Si désactivée (`false`), cette fonctionnalité est désactivée.
 
-  - **`isError`** (booléen, valeur par défaut : `false`) :
+- **`isError`** (booléen, valeur par défaut : `false`) :
   Cette prop permet de personnaliser l'apparence du titre de la modale. Si isError est true, le titre sera affiché en rouge pour indiquer une erreur. Sinon, il sera en bleu par défaut.
 
 ## Utilisation
