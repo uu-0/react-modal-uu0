@@ -42,10 +42,10 @@ const Header = styled.div`
   align-items: center;
 `
 
-//titre de la modale
+//titre de la modale (personnalisation couleur si erreur)
 const Title = styled.h2`
   font-size: 24px;
-  color: #1565c0; 
+  color: ${({ $isError }) => ($isError ? '#e53935' : '#1565c0')};
 `
 
 //bouton close de la modale
@@ -76,6 +76,7 @@ export default function Modal({
   onClose,        //fonction pour fermer la modale
   title,          //titre personnalisé
   text,           //contenu personnalisé
+  isError= false, //gère le type de modale (succès, erreur)
   escapeClose = true, //autorisation fermeture escape
   clickClose = true   //autorisation fermeture en cliquant en dehors
 }) {
@@ -122,7 +123,7 @@ export default function Modal({
     >
       <Container $isVisible={isVisible}>
         <Header>
-          <Title>{title}</Title>
+          <Title $isError={isError}>{title}</Title>
           <CloseButton onClick={onClose}>&times;</CloseButton>
         </Header>
         <ModalBody>{text}</ModalBody>

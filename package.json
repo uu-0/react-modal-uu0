@@ -1,6 +1,6 @@
 {
   "name": "react-modal-component-uu0",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A customizable modal component for React applications",
   "main": "src/index.js",
   "scripts": {
