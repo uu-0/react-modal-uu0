@@ -54,10 +54,15 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   //fonction pour ouvrir la modale
-  const openModal = () => setIsModalOpen(true)
+  function openModal(){
+    setIsModalOpen(true)
+  }
+  
 
   //fonction pour fermer la modale
-  const closeModal = () => setIsModalOpen(false)
+  function closeModal(){
+    setIsModalOpen(false)
+  }
 
   return (
     <div>
@@ -72,7 +77,7 @@ function App() {
         clickClose={true}   //permet la fermeture en cliquant sur l'overlay
       />
     </div>
-  );
+  )
 }
 
 export default App
@@ -103,6 +108,9 @@ dans index.html
 
 - **`clickClose`** (booléen, valeur par défaut : `true`) :  
   Si activée (`true`), la modale se fermera lorsque l'utilisateur clique sur l'overlay (l'arrière-plan semi-transparent). Si désactivée (`false`), cette fonctionnalité est désactivée.
+
+  - **`isError`** (booléen, valeur par défaut : `false`) :
+  Cette prop permet de personnaliser l'apparence du titre de la modale. Si isError est true, le titre sera affiché en rouge pour indiquer une erreur. Sinon, il sera en bleu par défaut.
 
 
 
